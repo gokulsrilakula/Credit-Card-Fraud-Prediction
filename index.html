@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Credit Card Fraud Detection</h1>
+    <form method="post">
+        <label for="cc_num">Credit Card Number:</label>
+        <input type="text" id="cc_num" name="cc_num" required><br>
+
+        <label for="merchant">Merchant:</label>
+        <input type="text" id="merchant" name="merchant" required><br>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required><br>
+
+        <label for="amt">Amount:</label>
+        <input type="number" id="amt" name="amt" step="0.01" required><br>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required><br>
+
+        <label for="zip">ZIP Code:</label>
+        <input type="number" id="zip" name="zip" required><br>
+
+        <label for="lat">Latitude:</label>
+        <input type="number" id="lat" name="lat" step="0.000001" required><br>
+
+        <label for="long">Longitude:</label>
+        <input type="number" id="long" name="long" step="0.000001" required><br>
+
+        <label for="city_pop">City Population:</label>
+        <input type="number" id="city_pop" name="city_pop" required><br>
+
+        <label for="job">Job:</label>
+        <input type="text" id="job" name="job" required><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br>
+
+        <label for="unix_time">Unix Time:</label>
+        <input type="number" id="unix_time" name="unix_time" required><br>
+
+        <label for="merch_lat">Merchant Latitude:</label>
+        <input type="number" id="merch_lat" name="merch_lat" step="0.000001" required><br>
+
+        <label for="merch_long">Merchant Longitude:</label>
+        <input type="number" id="merch_long" name="merch_long" step="0.000001" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if result %}
+        <h2>Prediction Result</h2>
+        <p><strong>Result:</strong> {{ result }}</p>
+        <p><strong>Probability:</strong> {{ probability }}</p>
+    {% endif %}
+</body>
+</html>
